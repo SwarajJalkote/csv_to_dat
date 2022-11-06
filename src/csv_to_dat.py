@@ -18,21 +18,35 @@ def read_csv_file(filename, delimeter=",", column_names=list()):
     return csv_data
 
 
+def convert_to_dat(csv_data, output_path="output.dat"):
+    '''
+        This function will convert the Dataframe to dat
+    '''
+    for i in range(3):
+        if output_path.endswith(".dat"):
+            try:
+                csv_data.to_csv(path_or_buf=output_path, sep="|", header=True, index=False, mode="w", encoding="UTF-8")
+                return f"File created successfully in {output_path}" 
+            except TypeError:
+                print("Please provide correct path with .dat file")
+                traceback.print_exc()
+        else:
+            output_path = input("Please enter correct output path with .dat. Example: output.dat >")
+
+    return "Failed to provide correct output path"
+
+
 def read_and_convert(filename, delimeter=",", column_names=list()):
-    print(column_names)
+    '''
+        This function will convert the csv to dat
+    '''
     csv_data = read_csv_file(filename, delimeter, column_names)
-
-    return csv_data
-
-
+    response = convert_to_dat(csv_data=csv_data, output_path="csv/output.dat")
+    return response
 
 if __name__ == "__main__":
-    PROJECT_PATH = os.path.join(os.getcwd())
-    filename = PROJECT_PATH + "\csv" + "\\"+ "2022_Forbes_list.csv"
-    print(filename)
+    filename = "csv/2022_Forbes_list.csv"
     col_names = ["Rank in India", "Name","Headquarters","Revenue(billions US$)","Profit(billions US$)","Assets(billions US$)","Value(billions US$)","Industry"]
-    csv_data = read_and_convert(filename=filename, delimeter=",", column_names=col_names)
-
-    print(type(csv_data))
-
-
+    response_message = read_and_convert(filename=filename, delimeter=",", column_names=col_names)
+    
+    print(response_message)
