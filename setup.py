@@ -9,7 +9,7 @@ classifiers = [
 ]
  
 setup(
-  name='csv_to_dat',
+  name='CsvToDat',
   version='0.0.1',
   description='CSV to DAT convertor with additional options to make the conversion more efficient and flexibility to add or remove columns from the conversion',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),

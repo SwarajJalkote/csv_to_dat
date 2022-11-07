@@ -54,7 +54,7 @@ def csv_to_dat(input_file, input_del=",", output_path="output.dat", output_del="
             column_names: list of names of columns which you want to extract from csv
     '''
     csv_data = read_csv_file(input_file, input_del, column_names)
-    response = convert_to_dat(csv_data=csv_data, output_path=f"csv/{output_path}", output_del=output_del)
+    response = convert_to_dat(csv_data=csv_data, output_path=output_path, output_del=output_del)
     return response
 
 # if __name__ == "__main__":
