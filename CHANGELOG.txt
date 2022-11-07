@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-0.0.1 (07/11/2022) // Date : DD/MM/YYYY
+0.0.1 (07/11/2022)
 -------------------
 - First Release
     - Added the functionality to perform opetions of reading the csv and converting it to dat
