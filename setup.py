@@ -9,7 +9,7 @@ classifiers = [
 ]
  
 setup(
-  name='CsvToDat',
+  name='csvtodat',
   version='0.0.1',
   description='CSV to DAT convertor with additional options to make the conversion more efficient and flexibility to add or remove columns from the conversion',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
@@ -18,7 +18,8 @@ setup(
   author_email='swarajjalkote98@gmail.com',
   license='MIT', 
   classifiers=classifiers,
+  py_modules=['csvtodat'],
+  package_dir={'':'src'},
   keywords=['csv', 'dat', 'convertor'], 
-  packages=find_packages(),
   install_requires=['setuptools', 'pandas'] 
 )
