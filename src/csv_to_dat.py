@@ -21,17 +21,18 @@ def read_csv_file(input_file, input_del=",", column_names=list()) -> pd.DataFram
     return csv_data
 
 
-def convert_to_dat(csv_data, output_path="output.dat") -> str:
+def convert_to_dat(csv_data, output_path="output.dat", output_del="|") -> str:
     '''
         This function will convert the Dataframe to dat.\n
          Description:
             csv_data: pandas DataFrame returned by read_csv()
             output_path: dat file which will be created as output with expected path
+            output_del: delimiter used in output file: Default: | (pipe)
     '''
     
     if output_path.endswith(".dat"):
         try:
-            csv_data.to_csv(path_or_buf=output_path, sep="|", header=True, index=False, mode="w", encoding="UTF-8")
+            csv_data.to_csv(path_or_buf=output_path, sep=output_del, header=True, index=False, mode="w", encoding="UTF-8")
             return f"File created successfully in {output_path}" 
         except Exception as exception:
             print("Exception :", exception)
@@ -53,7 +54,7 @@ def csv_to_dat(input_file, input_del=",", output_path="output.dat", output_del="
             column_names: list of names of columns which you want to extract from csv
     '''
     csv_data = read_csv_file(input_file, input_del, column_names)
-    response = convert_to_dat(csv_data=csv_data, output_path=f"csv/{output_path}")
+    response = convert_to_dat(csv_data=csv_data, output_path=f"csv/{output_path}", output_del=output_del)
     return response
 
 # if __name__ == "__main__":
