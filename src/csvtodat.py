@@ -58,17 +58,17 @@ def csv_to_dat(input_file, input_del=",", output_path="output.dat", output_del="
     return response
 
 
-def dat_to_csv(input_file, input_del=",", output_path="output.dat", output_del="|", column_names=list()) -> str:
-    '''
-        This function will convert the csv to dat.\n
-        Description:
-            input_file: csv file which needs to be converted with complete path
-            input_del: delimiter used in input file. Default: , (comma)
-            output_path: dat file which will be created as output with expected path
-            output_del: delimiter used in output file: Default: | (pipe)
-            column_names: list of names of columns which you want to extract from csv
-    '''
-    pass
+# def dat_to_csv(input_file, input_del=",", output_path="output.dat", output_del="|", column_names=list()) -> str:
+#     '''
+#         This function will convert the csv to dat.\n
+#         Description:
+#             input_file: csv file which needs to be converted with complete path
+#             input_del: delimiter used in input file. Default: , (comma)
+#             output_path: dat file which will be created as output with expected path
+#             output_del: delimiter used in output file: Default: | (pipe)
+#             column_names: list of names of columns which you want to extract from csv
+#     '''
+#     pass
 # if __name__ == "__main__":
 #     filename = "csv/2022_Forbes_list.csv"
 #     col_names = ["Rank in India", "Name","Headquarters","Revenue(billions US$)","Profit(billions US$)","Assets(billions US$)","Value(billions US$)","Industry"]
