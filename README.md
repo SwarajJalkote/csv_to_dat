@@ -1,14 +1,14 @@
 This is a Python Library to Read the CSV file and convert it into .dat file
 
-<h1>Description:</h1>
+# Description: 
 **PyPi:** https://pypi.org/project/csvtodat/ <br />
 ![image](https://user-images.githubusercontent.com/29909977/200530068-5d78646d-cd5c-473f-98ed-7c6c140a0953.png)
 
-<h1>Installation:</h1>
+# Installation:
 - ``` pip install csvtodat ```
 
-<h1> Functions: </h1>
-- ``` def csv_to_dat(input_file, input_del=",", output_path="output.dat", output_del="|", column_names=list()) -> str:
+# Functions:
+- ```def csv_to_dat(input_file, input_del=",", output_path="output.dat", output_del="|", column_names=list()) -> str:
     '''
         This function will convert the csv to dat.\n
         Description:
@@ -17,5 +17,4 @@ This is a Python Library to Read the CSV file and convert it into .dat file
             output_path: dat file which will be created as output with expected path
             output_del: delimiter used in output file: Default: | (pipe)
             column_names: list of names of columns which you want to extract from csv
-    '''
-  ```
+    '''```
