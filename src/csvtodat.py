@@ -12,9 +12,16 @@ def read_csv_file(input_file, input_del=",", column_names=list()) -> pd.DataFram
             input_del: delimiter used in input file. Default: , (comma)
             column_names: list of names of columns which you want to extract from csv
     '''
-    csv_data = pd.read_csv(filepath_or_buffer=input_file,
+    if column_names != []:
+        csv_data = pd.read_csv(filepath_or_buffer=input_file,
                             sep=input_del,
                             usecols=column_names,
+                            skip_blank_lines=True,
+                            encoding="UTF-8",
+                            engine="python")
+    else:
+        csv_data = pd.read_csv(filepath_or_buffer=input_file,
+                            sep=input_del,
                             skip_blank_lines=True,
                             encoding="UTF-8",
                             engine="python")
