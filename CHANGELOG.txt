@@ -1,7 +1,10 @@
 Change Log
 ==========
 
-0.0.1 (07/11/2022)
+0.0.1 (2022-11-07)
 -------------------
-- First Release
-    - Added the functionality to perform opetions of reading the csv and converting it to dat
+- Added the functionality to perform opetions of reading the csv and converting it to dat
+
+0.1.1 (2022-11-08)
+-------------------
+- [MINOR] Handled the columns error if no columns list is defined
