@@ -5,7 +5,9 @@ This is a Python Library to Read the CSV file and convert it into .dat file
 ![image](https://user-images.githubusercontent.com/29909977/200530068-5d78646d-cd5c-473f-98ed-7c6c140a0953.png)
 
 # Installation:
-``` pip install csvtodat ```
+```python
+pip install csvtodat
+```
 
 # Functions:
  ```python
