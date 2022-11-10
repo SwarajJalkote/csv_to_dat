@@ -21,6 +21,23 @@ def read_csv_file(input_file, input_del=",", column_names=list()) -> pd.DataFram
     return csv_data
 
 
+def read_dat_file(input_file, input_del="|", column_names=list()):
+    '''
+        This function reads the DAT file and converts it into pandas Dataframe.\n
+        Description:
+            input_file: dat file which needs to be converted with complete path
+            input_del: delimiter used in input file. Default: | (pipe)
+            column_names: list of names of columns which you want to extract from dat
+    '''
+    dat_data = pd.read_csv(filepath_or_buffer=input_file,
+                            sep=input_del,
+                            usecols=column_names,
+                            skip_blank_lines=True,
+                            encoding="UTF-8",
+                            engine="python")
+    return dat_data
+
+
 def convert_to_dat(csv_data, output_path="output.dat", output_del="|") -> str:
     '''
         This function will convert the Dataframe to dat.\n
@@ -58,17 +75,19 @@ def csv_to_dat(input_file, input_del=",", output_path="output.dat", output_del="
     return response
 
 
-def dat_to_csv(input_file, input_del=",", output_path="output.dat", output_del="|", column_names=list()) -> str:
+def dat_to_csv(input_file, input_del="|", output_path="output.csv", output_del=",", column_names=list()) -> str:
     '''
         This function will convert the csv to dat.\n
         Description:
-            input_file: csv file which needs to be converted with complete path
-            input_del: delimiter used in input file. Default: , (comma)
-            output_path: dat file which will be created as output with expected path
-            output_del: delimiter used in output file: Default: | (pipe)
-            column_names: list of names of columns which you want to extract from csv
+            input_file: dat file which needs to be converted with complete path
+            input_del: delimiter used in input file. Default: | (pipe)
+            output_path: csv file which will be created as output with expected path
+            output_del: delimiter used in output file: Default: , (comma)
+            column_names: list of names of columns which you want to extract from dat
     '''
-    pass
+    dat_data = read_dat_file(input_file, input_del, column_names)
+
+
 # if __name__ == "__main__":
 #     filename = "csv/2022_Forbes_list.csv"
 #     col_names = ["Rank in India", "Name","Headquarters","Revenue(billions US$)","Profit(billions US$)","Assets(billions US$)","Value(billions US$)","Industry"]
