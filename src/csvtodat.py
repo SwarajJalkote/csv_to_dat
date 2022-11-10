@@ -12,9 +12,16 @@ def read_csv_file(input_file, input_del=",", column_names=list()) -> pd.DataFram
             input_del: delimiter used in input file. Default: , (comma)
             column_names: list of names of columns which you want to extract from csv
     '''
-    csv_data = pd.read_csv(filepath_or_buffer=input_file,
+    if column_names != []:
+        csv_data = pd.read_csv(filepath_or_buffer=input_file,
                             sep=input_del,
                             usecols=column_names,
+                            skip_blank_lines=True,
+                            encoding="UTF-8",
+                            engine="python")
+    else:
+        csv_data = pd.read_csv(filepath_or_buffer=input_file,
+                            sep=input_del,
                             skip_blank_lines=True,
                             encoding="UTF-8",
                             engine="python")
@@ -29,9 +36,16 @@ def read_dat_file(input_file, input_del="|", column_names=list()):
             input_del: delimiter used in input file. Default: | (pipe)
             column_names: list of names of columns which you want to extract from dat
     '''
-    dat_data = pd.read_csv(filepath_or_buffer=input_file,
+    if column_names != []:
+        dat_data = pd.read_csv(filepath_or_buffer=input_file,
                             sep=input_del,
                             usecols=column_names,
+                            skip_blank_lines=True,
+                            encoding="UTF-8",
+                            engine="python")
+    else:
+        dat_data = pd.read_csv(filepath_or_buffer=input_file,
+                            sep=input_del,
                             skip_blank_lines=True,
                             encoding="UTF-8",
                             engine="python")
@@ -75,6 +89,7 @@ def csv_to_dat(input_file, input_del=",", output_path="output.dat", output_del="
     return response
 
 
+<<<<<<< HEAD
 def dat_to_csv(input_file, input_del="|", output_path="output.csv", output_del=",", column_names=list()) -> str:
     '''
         This function will convert the csv to dat.\n
@@ -88,6 +103,19 @@ def dat_to_csv(input_file, input_del="|", output_path="output.csv", output_del="
     dat_data = read_dat_file(input_file, input_del, column_names)
 
 
+=======
+# def dat_to_csv(input_file, input_del=",", output_path="output.dat", output_del="|", column_names=list()) -> str:
+#     '''
+#         This function will convert the csv to dat.\n
+#         Description:
+#             input_file: csv file which needs to be converted with complete path
+#             input_del: delimiter used in input file. Default: , (comma)
+#             output_path: dat file which will be created as output with expected path
+#             output_del: delimiter used in output file: Default: | (pipe)
+#             column_names: list of names of columns which you want to extract from csv
+#     '''
+#     pass
+>>>>>>> 2c482348e62a6ab92c1131c362ebf6e1c20a20b3
 # if __name__ == "__main__":
 #     filename = "csv/2022_Forbes_list.csv"
 #     col_names = ["Rank in India", "Name","Headquarters","Revenue(billions US$)","Profit(billions US$)","Assets(billions US$)","Value(billions US$)","Industry"]
