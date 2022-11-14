@@ -1,4 +1,4 @@
-This is a Python Library to Read the CSV file and convert it into .dat file
+This is a Python Library to Read the CSV file and convert it into .dat file and vice versa
 
 # Description: 
 **PyPi:** https://pypi.org/project/csvtodat/ <br />
