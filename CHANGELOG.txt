@@ -12,3 +12,7 @@ Change Log
 0.1.2 (2022-11-08)
 -------------------
 - [PATCH] Handled the columns error if no columns list is defined
+
+0.2.0 (2022-11-14)
+-------------------
+- Added new functionality to convert dat to csv

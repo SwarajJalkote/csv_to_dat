@@ -10,7 +10,7 @@ classifiers = [
  
 setup(
   name='csvtodat',
-  version='0.1.2',
+  version='0.2.0',
   description='CSV to DAT convertor with additional options to make the conversion more efficient and flexibility to add or remove columns from the conversion',
   long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
   url='https://github.com/SwarajJalkote/csv_to_dat',  
